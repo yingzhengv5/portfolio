@@ -11,7 +11,7 @@ export const projects = [
         title: "Resume",
         url: "https://drive.google.com/file/d/1r1OpMzNJv9emJBukCruhrHg2_Btk6lVA/view?usp=sharing",
         image: "projects/resume.png",
-        description: "Check more information about me",
+        description: "Check more information about me.",
     },
     {
         title: "Campground",
@@ -48,7 +48,7 @@ const Project = (props) => {
     const bgOpacity = useMotionValue(0.4);
 
     useEffect(() => {
-        animate(bgOpacity, highlighted ? 0.7 : 0.4);
+        animate(bgOpacity, highlighted ? 0.8 : 0.4);
     }, [highlighted]);
 
     useFrame(() => {
@@ -62,7 +62,7 @@ const Project = (props) => {
                 onClick={() => window.open(project.url, "_blank")}
                 ref={background}>
                 <planeGeometry args={[3, 4]} />
-                <meshBasicMaterial color="black" opacity={0.4} />
+                <meshBasicMaterial color="#415a77" opacity={0.4} />
             </mesh>
             <Image
                 scale={[2.8, 1.5, 1]}
