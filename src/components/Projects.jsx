@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 export const projects = [
   {
     title: "Resume",
-    url: "https://drive.google.com/file/d/1Yk6WDwSEswSLUEprLcvPtUZpKyPBsqcc/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1NMuBV53hFI3lDLAxoIIUMJulfAiSBHTU/view?usp=sharing",
     image: "projects/resume.png",
     description: "Check more information about me.",
   },
