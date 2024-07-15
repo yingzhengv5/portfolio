@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     title: "Campground",
-    url: "http://yingzheng1161174.pythonanywhere.com/",
+    url: "https://yingzheng.pythonanywhere.com/",
     image: "projects/campground.png",
     description:
       "School Project - Selwyn Campground Internal System: Flask backend, Bootstrap frontend, MySQL storage. Features include bookings, customer info management, and operational data viewing for staff.",
