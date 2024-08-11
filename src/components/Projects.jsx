@@ -14,7 +14,7 @@ export const projects = [
     description: "Check more information about me.",
   },
   {
-    title: "Tree Message Board",
+    title: "Tree Talk",
     url: "https://yingzheng1161174.pythonanywhere.com/",
     image: "projects/tree.png",
     description:
