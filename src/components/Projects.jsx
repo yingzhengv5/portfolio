@@ -9,16 +9,16 @@ import { useEffect, useRef } from "react";
 export const projects = [
   {
     title: "Resume",
-    url: "https://drive.google.com/file/d/1NMuBV53hFI3lDLAxoIIUMJulfAiSBHTU/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1mrh3zk3Ovfbd5L8DsWq9YYfairmeJHn8/view?usp=sharing",
     image: "projects/resume.png",
     description: "Check more information about me.",
   },
   {
-    title: "Campground",
-    url: "https://yingzheng.pythonanywhere.com/",
-    image: "projects/campground.png",
+    title: "Tree Message Board",
+    url: "https://yingzheng1161174.pythonanywhere.com/",
+    image: "projects/tree.png",
     description:
-      "School Project - Selwyn Campground Internal System: Flask backend, Bootstrap frontend, MySQL storage. Features include bookings, customer info management, and operational data viewing for staff.",
+      "This app helps homeowners resolve tree and hedge disputes peacefully, avoiding drastic measures like chainsaws. Join to communicate and find friendly solutions to tree-related conflicts.",
   },
   {
     title: "Yelp Camp",
