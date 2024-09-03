@@ -8,10 +8,11 @@ import { useEffect, useRef } from "react";
 
 export const projects = [
   {
-    title: "Resume",
-    url: "https://drive.google.com/file/d/1mrh3zk3Ovfbd5L8DsWq9YYfairmeJHn8/view?usp=sharing",
-    image: "projects/resume.png",
-    description: "Check more information about me.",
+    title: "Voting System",
+    url: "https://639eta.pythonanywhere.com/",
+    image: "projects/beach.png",
+    description:
+      'This website enables users to participate in a "Beach of the Year" competition, with multiple roles implementing different functions.',
   },
   {
     title: "Tree Talk",
