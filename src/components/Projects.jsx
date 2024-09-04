@@ -8,11 +8,16 @@ import { useEffect, useRef } from "react";
 
 export const projects = [
   {
-    title: "Voting System",
-    url: "https://639eta.pythonanywhere.com/",
-    image: "projects/beach.png",
-    description:
-      'This website enables users to participate in a "Beach of the Year" competition, with multiple roles implementing different functions.',
+    title: "Linkedin",
+    url: "https://www.linkedin.com/in/ying-zheng-v5/",
+    image: "projects/linkedin.png",
+    description: "Connect with me on Linkedin.",
+  },
+  {
+    title: "Github",
+    url: "https://github.com/yingzhengv5",
+    image: "projects/github.png",
+    description: "Explore my GitHub to see my code and projects.",
   },
   {
     title: "Tree Talk",
@@ -22,23 +27,18 @@ export const projects = [
       "This app helps homeowners resolve tree and hedge disputes peacefully, avoiding drastic measures like chainsaws. Join to communicate and find friendly solutions to tree-related conflicts.",
   },
   {
+    title: "Voting System",
+    url: "https://639eta.pythonanywhere.com/",
+    image: "projects/beach.png",
+    description:
+      'This website enables users to participate in a "Beach of the Year" competition, with multiple roles implementing different functions.',
+  },
+  {
     title: "Yelp Camp",
     url: "https://yelpcamp-nznf.onrender.com/",
     image: "projects/yelpcamp.png",
     description:
       "YelpCamp is a campground management app built with Node.js, Express.js, and MongoDB. It enables users to view, create, and review campgrounds.",
-  },
-  {
-    title: "Github",
-    url: "https://github.com/yingzhengv5",
-    image: "projects/github.png",
-    description: "Explore my GitHub to see my code and projects.",
-  },
-  {
-    title: "Linkedin",
-    url: "https://www.linkedin.com/in/ying-zheng-v5/",
-    image: "projects/linkedin.png",
-    description: "Connect with me on Linkedin.",
   },
 ];
 
@@ -61,7 +61,15 @@ const Project = (props) => {
       <mesh
         position={[0, 0, -0.001]}
         onClick={() => window.open(project.url, "_blank")}
-        ref={background}>
+        ref={background}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          document.body.style.cursor = "default";
+        }}>
         <planeGeometry args={[3, 4]} />
         <meshBasicMaterial color="#415a77" opacity={0.4} />
       </mesh>
