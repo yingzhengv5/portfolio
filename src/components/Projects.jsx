@@ -8,23 +8,37 @@ import { useEffect, useRef } from "react";
 
 export const projects = [
   {
-    title: "Linkedin",
-    url: "https://www.linkedin.com/in/ying-zheng-v5/",
-    image: "projects/linkedin.png",
-    description: "Connect with me on Linkedin.",
-  },
-  {
     title: "Github",
     url: "https://github.com/yingzhengv5",
     image: "projects/github.png",
     description: "Explore my GitHub to see my code and projects.",
   },
   {
+    title: "Pet Calender",
+    url: "https://calendar-ying.vercel.app/",
+    image: "projects/calendar.png",
+    description: "A cute calendar app that integrates with the Unsplash API.",
+  },
+  {
+    title: "Yelp Camp",
+    url: "https://yelpcamp-nznf.onrender.com/",
+    image: "projects/yelpcamp.png",
+    description:
+      "YelpCamp is a campground management app built with Node.js, Express.js, and MongoDB. It enables users to view, create, and review campgrounds.",
+  },
+  {
     title: "Tree Talk",
-    url: "https://yingzheng1161174.pythonanywhere.com/",
+    url: "https://yingzheng01.pythonanywhere.com/",
     image: "projects/tree.png",
     description:
       "This app helps homeowners resolve tree and hedge disputes peacefully, avoiding drastic measures like chainsaws. Join to communicate and find friendly solutions to tree-related conflicts.",
+  },
+  {
+    title: "Voice of Nature",
+    url: "https://etaproject02.pythonanywhere.com/",
+    image: "projects/nature.png",
+    description:
+      "This is a 'competition as a service' platform that allows users to run their own competitions without technical requirements.",
   },
   {
     title: "Voting System",
@@ -34,11 +48,11 @@ export const projects = [
       'This website enables users to participate in a "Beach of the Year" competition, with multiple roles implementing different functions.',
   },
   {
-    title: "Yelp Camp",
-    url: "https://yelpcamp-nznf.onrender.com/",
-    image: "projects/yelpcamp.png",
+    title: "Order System",
+    url: "https://yingzheng1161174.pythonanywhere.com/login",
+    image: "projects/order.png",
     description:
-      "YelpCamp is a campground management app built with Node.js, Express.js, and MongoDB. It enables users to view, create, and review campgrounds.",
+      "This is an order system that allows users to order products online. The system is built based on the MVC architecture.",
   },
 ];
 
