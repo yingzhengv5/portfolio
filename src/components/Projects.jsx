@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     title: "Yelp Camp",
-    url: "https://yelpcamp-nznf.onrender.com/",
+    url: "https://yelpcamp-hvd0.onrender.com/",
     image: "projects/yelpcamp.png",
     description:
       "YelpCamp is a campground management app built with Node.js, Express.js, and MongoDB. It enables users to view, create, and review campgrounds.",
