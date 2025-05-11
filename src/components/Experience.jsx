@@ -136,14 +136,12 @@ export const Experience = (props) => {
         }}
         transition={{ duration: 0.8 }}>
         <Office section={section} />
-        <group name="Empty">
-          <group
-            ref={characterContainerAboutRef}
-            name="Armature"
-            position={[-0.141, 0.217, -0.942]}
-            rotation={[3.044, 0.289, -3.133]}
-            scale={1.584}></group>
-        </group>
+        <group
+          ref={characterContainerAboutRef}
+          name="Armature"
+          position={[-0.141, 0.217, -0.942]}
+          rotation={[3.044, 0.289, -3.133]}
+          scale={1.584}></group>
       </motion.group>
 
       {/* SKILLS */}
