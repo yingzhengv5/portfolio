@@ -1,2 +1,1 @@
-Ying Portfolio
-https://yingzheng.netlify.app/
+Ying Portfolio: https://yingzheng.netlify.app/
