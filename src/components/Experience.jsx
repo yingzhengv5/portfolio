@@ -43,7 +43,7 @@ export const Experience = (props) => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
       setCharacterAnimation(section === 0 ? "Typing" : "Standing");
-    }, 600);
+    }, 100);
   }, [section]);
 
   const characterGroup = useRef();
@@ -134,14 +134,16 @@ export const Experience = (props) => {
         animate={{
           y: isMobile ? -viewport.height / 6 : 0,
         }}
-        transition={{ duration: 0.8 }}>
+        transition={{ duration: 1.5 }}>
         <Office section={section} />
-        <group
-          ref={characterContainerAboutRef}
-          name="Armature"
-          position={[-0.141, 0.217, -0.942]}
-          rotation={[3.044, 0.289, -3.133]}
-          scale={1.584}></group>
+        <group name="Empty">
+          <group
+            ref={characterContainerAboutRef}
+            name="Armature"
+            position={[-0.141, 0.217, -0.942]}
+            rotation={[3.044, 0.289, -3.133]}
+            scale={1.584}></group>
+        </group>
       </motion.group>
 
       {/* SKILLS */}
