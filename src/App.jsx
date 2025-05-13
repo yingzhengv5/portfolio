@@ -46,6 +46,7 @@ function App() {
           onSectionChange={setSection}
           menuOpened={menuOpened}
           setMenuOpened={setMenuOpened}
+          started={started}
         />
       </MotionConfig>
       <Leva hidden />

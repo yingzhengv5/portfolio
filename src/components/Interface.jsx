@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { currentProjectAtom, projects } from "./Projects";
 import { useForm, ValidationError } from "@formspree/react";
+import { useState } from "react";
 
 const Section = (props) => {
   const { children, mobileTop } = props;
@@ -68,7 +69,7 @@ const AboutSection = (props) => {
           duration: 1,
           delay: 1.5,
         }}>
-        I enjoy using code to create unique web worlds.
+        I love creating functional and beautiful software.
       </motion.p>
       <motion.button
         onClick={() => setSection(3)}
@@ -93,72 +94,90 @@ const AboutSection = (props) => {
 };
 
 const skills = [
-  {
-    title: "Python",
-    level: 80,
-  },
-  {
-    title: "HTML + CSS",
-    level: 80,
-  },
-  {
-    title: "Javascript",
-    level: 70,
-  },
-  {
-    title: "C#",
-    level: 50,
-  },
-  {
-    title: "React",
-    level: 50,
-  },
+  { name: "JavaScript", position: { side: "left", order: 1 } },
+  { name: "TypeScript", position: { side: "right", order: 1 } },
+  { name: "React", position: { side: "left", order: 2 } },
+  { name: "HTML/CSS", position: { side: "right", order: 2 } },
+  { name: "Python", position: { side: "left", order: 3 } },
+  { name: "Agile", position: { side: "right", order: 3 } },
+  { name: "MySQL", position: { side: "left", order: 4 } },
+  { name: "MongoDB", position: { side: "right", order: 4 } },
+  { name: "Docker", position: { side: "left", order: 5 } },
+  { name: "Azure", position: { side: "right", order: 5 } },
 ];
 
 const SkillSection = () => {
+  // Create fixed positions based on skill data with horizontal variation
+  const [positions] = useState(() => {
+    return skills.map((skill) => {
+      const { side, order } = skill.position;
+
+      // Calculate vertical spacing (15% per item)
+      const verticalSpacing = 15;
+
+      // Add horizontal variation within the column
+      // Left column: variations between 5% and 25%
+      // Right column: variations between 65% and 85%
+      let horizontalPosition;
+      if (side === "left") {
+        // Create a deterministic but varied horizontal position for left column
+        horizontalPosition = `${5 + ((order * 7) % 20)}%`;
+      } else {
+        // Create a deterministic but varied horizontal position for right column
+        horizontalPosition = `${65 + ((order * 11) % 20)}%`;
+      }
+
+      return {
+        left: horizontalPosition,
+        top: `${order * verticalSpacing}%`,
+        opacity: 0,
+      };
+    });
+  });
+
   return (
     <Section>
-      <motion.div className="w-full" whileInView={"visible"}>
-        <h2 className="text-3xl md:text-5xl font-bold text-white">Skills</h2>
-        <div className=" mt-8 space-y-4">
+      <motion.div className="w-full h-full relative" whileInView={"visible"}>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-2">
+          Skills
+        </h2>
+
+        <div className="w-full h-[90vh] relative">
           {skills.map((skill, index) => (
-            <div className="w-full md:w-64" key={index}>
-              <motion.h3
-                className="text-lg md:text-xl font-bold text-white"
-                initial={{
-                  opacity: 0,
-                }}
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      duration: 1,
-                      delay: 1 + index * 0.2,
-                    },
+            <motion.div
+              key={index}
+              className="absolute"
+              initial={{ ...positions[index] }}
+              variants={{
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    duration: 0.8,
+                    delay: 0.1 + index * 0.15,
                   },
+                },
+              }}
+              style={{
+                left: positions[index].left,
+                top: positions[index].top,
+                position: "absolute",
+              }}
+              whileHover={{
+                scale: 1.3,
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 10,
+                },
+              }}>
+              <span
+                className="text-2xl md:text-4xl font-bold text-white whitespace-nowrap px-4 py-2"
+                style={{
+                  textShadow: "0 0 20px #0f4c5c",
                 }}>
-                {skill.title}
-              </motion.h3>
-              <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                <motion.div
-                  className="h-full bg-indigo-500 rounded-full "
-                  style={{ width: `${skill.level}%` }}
-                  initial={{
-                    scaleX: 0,
-                    originX: 0,
-                  }}
-                  variants={{
-                    visible: {
-                      scaleX: 1,
-                      transition: {
-                        duration: 1,
-                        delay: 1 + index * 0.2,
-                      },
-                    },
-                  }}
-                />
-              </div>
-            </div>
+                {skill.name}
+              </span>
+            </motion.div>
           ))}
         </div>
       </motion.div>
@@ -179,17 +198,19 @@ const ProjectsSection = () => {
 
   return (
     <Section>
-      <div className="flex w-full h-full gap-8 items-baseline justify-center mt-20">
+      <h2 className="text-3xl md:text-5xl font-bold leading-snug mb-4 mt-2">
+        Projects
+      </h2>
+      <div className="flex w-full h-full gap-8 items-baseline justify-center">
         <button
-          className="hover:text-indigo-600 transition-colors"
+          className="hover:text-indigo-600 transition-colors text-3xl font-bold"
           onClick={previousProject}>
-          ← Previous
+          ←
         </button>
-        <h2 className="text-3xl md:text-5xl font-bold">Projects</h2>
         <button
-          className="hover:text-indigo-600 transition-colors"
+          className="hover:text-indigo-600 transition-colors text-3xl font-bold"
           onClick={nextProject}>
-          Next →
+          →
         </button>
       </div>
     </Section>

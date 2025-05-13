@@ -77,7 +77,7 @@ export const Experience = (props) => {
         scale={[1.5, 1.5, 1.5]}
         animate={"" + section}
         transition={{
-          duration: 0.6,
+          duration: 0.8,
         }}
         variants={{
           0: {
